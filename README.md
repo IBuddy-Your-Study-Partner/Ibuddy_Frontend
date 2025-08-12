@@ -40,48 +40,61 @@ Task management, mental wellness, and AI-driven scheduling into a gamified produ
 # Repo Structure (Subject to change)
 
 ```
-src/
+ibuddy/
+├── app/
+│   ├── globals.css
+│   ├── layout.tsx              # Root layout
+│   ├── page.tsx                # Dashboard (home page)
+│   ├── loading.tsx             # Global loading component
+│   ├── arena/
+│   │   ├── layout.tsx          # Arena-specific layout
+│   │   └── page.tsx            # Arena Mode
+│   └── aftermath/
+│       └── page.tsx            # Aftermath Screen
 ├── components/
-│   ├── Arena/
-│   │   ├── ArenaMode.jsx              # Main Arena Mode container
-│   │   ├── TaskProgressBar.jsx        # Floating numbered circles progress
-│   │   ├── PomodoroTimer.jsx         # Focus/break timer with animations
-│   │   ├── BreathingOverlay.jsx      # Breathing exercise overlay
-│   │   └── MindfulnessSession.jsx    # Meditation/stress relief sessions
 │   ├── Dashboard/
-│   │   ├── PreArenaSetup.jsx         # Main dashboard before Arena
-│   │   ├── SmartTodoList.jsx         # AI-powered task management
-│   │   ├── IBStudyPlanner.jsx        # Subject-specific study templates
-│   │   └── StressCheckin.jsx         # Daily mood/stress assessment
-│   ├── PostSession/
-│   │   ├── AftermathScreen.jsx       # Post-Arena analytics
-│   │   ├── PerformanceChart.jsx      # Mood vs task performance
-│   │   └── GamificationDisplay.jsx   # Streaks, coins, achievements
-│   ├── Shared/
-│   │   ├── BuddyFinder.jsx           # Student matching system
-│   │   ├── CollaborativeForums.jsx   # Community discussions
-│   │   └── StressManagementTools.jsx # Breathing exercises, music
-│   └── Common/
-│       ├── Navigation.jsx            # App navigation
-│       ├── Timer.jsx                 # Reusable timer component
-│       └── ProgressIndicator.jsx     # Progress visualization
-├── pages/
-│   ├── Dashboard.jsx                 # Pre-Arena main interface
-│   ├── Arena.jsx                     # Full-screen Arena Mode
-│   ├── Aftermath.jsx                 # Post-session analysis
-│   ├── BuddyFinder.jsx              # Student matching
-│   ├── Forums.jsx                    # Community discussions
-│   └── Profile.jsx                   # User settings and progress
+│   │   ├── CalendarWidget.tsx
+│   │   ├── TaskInput.tsx
+│   │   ├── TaskList.tsx
+│   │   ├── SubjectProgress.tsx
+│   │   ├── WellnessCheck.tsx
+│   │   └── ArenaButton.tsx
+│   ├── Arena/
+│   │   ├── ArenaTimer.tsx
+│   │   ├── TaskProgress.tsx
+│   │   ├── BreathingRing.tsx
+│   │   ├── TaskDisplay.tsx
+│   │   └── ArenaControls.tsx
+│   ├── Aftermath/
+│   │   ├── PerformanceChart.tsx
+│   │   ├── SessionSummary.tsx
+│   │   ├── Achievements.tsx
+│   │   └── Recommendations.tsx
+│   └── UI/
+│       ├── Button.tsx
+│       ├── Card.tsx
+│       └── Header.tsx
 ├── hooks/
-│   ├── useTimer.js                   # Timer state management
-│   ├── useArenaSession.js           # Arena session logic
-│   └── useStressTracking.js         # Mood/stress data handling
+│   ├── useTimer.ts
+│   ├── useLocalStorage.ts
+│   ├── useBreathing.ts
+│   └── useArenaSession.ts
+├── context/
+│   └── ArenaContext.tsx
+├── types/
+│   ├── index.ts
+│   ├── tasks.ts
+│   ├── session.ts
+│   └── user.ts
 ├── utils/
-│   ├── aiScheduler.js               # Task prioritization logic
-│   ├── analytics.js                 # Performance tracking
-│   └── gamification.js             # Streak/coin calculations
-└── styles/
-    ├── arena.css                    # Arena Mode specific styles
-    ├── dashboard.css                # Dashboard styling
-    └── animations.css               # Breathing animations, transitions
+│   ├── taskManager.ts
+│   ├── timeFormatter.ts
+│   └── analytics.ts
+├── public/
+│   ├── icons/
+│   └── sounds/
+├── next.config.js
+├── package.json
+├── tsconfig.json
+└── tailwind.config.ts
 ```
